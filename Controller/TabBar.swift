@@ -11,7 +11,6 @@ class TabBarViewController: UITabBarController {
         tabBar.backgroundColor = .white
         
         loadTabBar()
-
     }
     
     func loadTabBar() {
@@ -19,8 +18,6 @@ class TabBarViewController: UITabBarController {
         let homeVC = UINavigationController (rootViewController: ViewController())
         homeVC.tabBarItem.image = UIImage(systemName: "book.closed.fill")
         homeVC.tabBarItem.title = "Plans"
-        
-
 
         let profileVC = UINavigationController (rootViewController: TwoViewController())
         profileVC.tabBarItem.image = UIImage(systemName: "circle.inset.filled")
@@ -29,10 +26,8 @@ class TabBarViewController: UITabBarController {
         let threeVS = UINavigationController (rootViewController: ThreeViewController())
         threeVS.tabBarItem.image = UIImage(systemName: "person.circle.fill")
         threeVS.tabBarItem.title = "Profile"
-
         
         viewControllers = [homeVC, profileVC, threeVS]
-        
         
     }
 }
