@@ -11,10 +11,6 @@ import UIKit
 
 class CellCollectionView: UICollectionViewCell {
 
-
-
-
-
     lazy var iconImage: UIImageView = {
         var icon = UIImageView()
         icon.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +22,6 @@ class CellCollectionView: UICollectionViewCell {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 22)
-
         return label
     }()
 
@@ -46,42 +41,41 @@ class CellCollectionView: UICollectionViewCell {
     }()
 
 
-
     override init(frame: CGRect) {
         super.init(frame: frame)
 
 
         contentView.addSubview(iconImage)
         NSLayoutConstraint.activate([
-            iconImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            iconImage.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            //            iconImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 330)
-            iconImage.widthAnchor.constraint(equalToConstant: 24),
-            iconImage.heightAnchor.constraint(equalToConstant: 24)
+
+            iconImage.leadingAnchor.constraint  (equalTo: leadingAnchor , constant: 16),
+            iconImage.topAnchor.constraint      (equalTo: topAnchor     , constant: 16),
+            iconImage.widthAnchor.constraint    (equalToConstant: 24),
+            iconImage.heightAnchor.constraint   (equalToConstant: 24)
         ])
 
         contentView.addSubview(titileLabel)
         NSLayoutConstraint.activate([
-            titileLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 8),
-            titileLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
 
+            titileLabel.leadingAnchor.constraint    (equalTo: iconImage.trailingAnchor , constant: 8),
+            titileLabel.topAnchor.constraint        (equalTo: topAnchor                , constant: 16),
         ])
 
         contentView.addSubview(valueLabel)
         NSLayoutConstraint.activate([
-            valueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            valueLabel.topAnchor.constraint(equalTo: iconImage.bottomAnchor, constant: 15),
-            valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
 
+            valueLabel.leadingAnchor.constraint (equalTo: leadingAnchor             , constant: 16),
+            valueLabel.topAnchor.constraint     (equalTo: iconImage.bottomAnchor    , constant: 15),
+            valueLabel.bottomAnchor.constraint  (equalTo: bottomAnchor              , constant: -16)
         ])
 
         contentView.addSubview(penImage)
         NSLayoutConstraint.activate([
-            //            penImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            penImage.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            penImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            penImage.widthAnchor.constraint(equalToConstant: 24),
-            penImage.heightAnchor.constraint(equalToConstant: 24)
+
+            penImage.topAnchor.constraint       (equalTo: topAnchor         , constant: 16),
+            penImage.trailingAnchor.constraint  (equalTo: trailingAnchor    , constant: -16),
+            penImage.widthAnchor.constraint     (equalToConstant: 24),
+            penImage.heightAnchor.constraint    (equalToConstant: 24)
         ])
     }
 
