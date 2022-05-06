@@ -11,9 +11,7 @@ class TimerCircularBarView: UIView {
         layer.lineWidth = 0
         layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = UIColor.clear.cgColor
-        
         return layer
-        
     }()
     
     private let inProgressLayer: CAShapeLayer = {
@@ -22,7 +20,6 @@ class TimerCircularBarView: UIView {
         layer.strokeColor = UIColor.white.cgColor
         layer.lineCap = .round
         layer.fillColor = UIColor(named: "s")?.cgColor
-        
         return layer
     }()
     
@@ -32,7 +29,6 @@ class TimerCircularBarView: UIView {
         layer.fillColor = UIColor(named: "n")?.cgColor
         layer.lineCap = .round
         layer.strokeColor = UIColor(named: "n")?.cgColor
-        
         return layer
     }()
     
@@ -45,7 +41,6 @@ class TimerCircularBarView: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-        
     }()
     
     override init(frame: CGRect) {
@@ -67,52 +62,50 @@ class TimerCircularBarView: UIView {
                           timeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                           timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ]
+
         NSLayoutConstraint.activate(constraint)
     }
     
     func setupLayers() {
-            shapeLayer.cornerRadius = frame.width / 2
-            
-            let diameter = min(bounds.width, bounds.height)
-            let arcCenter = CGPoint(x: bounds.midX, y: bounds.midY)
-                    
-            shapeLayer.path = UIBezierPath(arcCenter: arcCenter,
-                                           radius: diameter / 2,
-                                           startAngle: 0,
-                                           endAngle: .pi * 2,
-                                           clockwise: true).cgPath
-                    
-            progressLayer.path = UIBezierPath(arcCenter: arcCenter,
-                                           radius: diameter / 2,
-                                           startAngle: -.pi / 2,
-                                           endAngle: .pi * 1.5,
-                                           clockwise: true).cgPath
+        shapeLayer.cornerRadius = frame.width / 2
+
+        let diameter = min(bounds.width, bounds.height)
+        let arcCenter = CGPoint(x: bounds.midX, y: bounds.midY)
+
+        shapeLayer.path = UIBezierPath      (arcCenter: arcCenter,
+                                            radius: diameter / 2,
+                                            startAngle: 0,
+                                            endAngle: .pi * 2,
+                                            clockwise: true).cgPath
+
+        progressLayer.path = UIBezierPath    (arcCenter: arcCenter,
+                                             radius: diameter / 2,
+                                             startAngle: -.pi / 2,
+                                             endAngle: .pi * 1.5,
+                                             clockwise: true).cgPath
         
-            inProgressLayer.path = UIBezierPath(arcCenter: arcCenter,
-                                                radius: diameter / 2.5,
-                                       startAngle: -.pi / 2,
-                                        endAngle: .pi * 1.5,
-                                       clockwise: true).cgPath
-            
-            shapeView.layer.addSublayer(shapeLayer)
-            shapeView.layer.insertSublayer(progressLayer, above: shapeLayer)
-            shapeView.layer.insertSublayer(inProgressLayer, above: progressLayer)
-        }
+        inProgressLayer.path = UIBezierPath  (arcCenter: arcCenter,
+                                              radius: diameter / 2.5,
+                                              startAngle: -.pi / 2,
+                                              endAngle: .pi * 1.5,
+                                              clockwise: true).cgPath
+
+
+        shapeView.layer.addSublayer(shapeLayer)
+        shapeView.layer.insertSublayer(progressLayer, above: shapeLayer)
+        shapeView.layer.insertSublayer(inProgressLayer, above: progressLayer)
+    }
     
     override func layoutSubviews() {
-           super.layoutSubviews()
-           setupLayers()
-       }
-    
-   
+        super.layoutSubviews()
+        setupLayers()
+    }
 
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 
-    
+
 

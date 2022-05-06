@@ -14,11 +14,11 @@ class TwoViewController: UIViewController {
 
 
     var dataArray:[ModelData] = [
-        ModelData(icon: UIImage(named: "Water drunk")!, title: "Water drunk", values: "0/2500 ml", pen: UIImage(named: "pen")!),
-        ModelData(icon: UIImage(named: "Steps")!, title: "Steps", values: "4000/7000 steps", pen: UIImage(named: "pen")!),
-        ModelData(icon: UIImage(named: "Fasting days")!, title: "Fasting days", values: "8 days", pen: UIImage(named: "pen")!),
-        ModelData(icon: UIImage(named: "Weight")!, title: "Weight", values: "84 kg", pen: UIImage(named: "pen")!)
 
+        ModelData(icon: UIImage(named: "Water drunk")!  , title: "Water drunk"  , values: "0/2500 ml",       pen: UIImage(named: "pen")!),
+        ModelData(icon: UIImage(named: "Steps")!        , title: "Steps"        , values: "4000/7000 steps", pen: UIImage(named: "pen")!),
+        ModelData(icon: UIImage(named: "Fasting days")! , title: "Fasting days" , values: "8 days",          pen: UIImage(named: "pen")!),
+        ModelData(icon: UIImage(named: "Weight")!       , title: "Weight"       , values: "84 kg",           pen: UIImage(named: "pen")!)
     ]
 
     
@@ -30,7 +30,6 @@ class TwoViewController: UIViewController {
     }()
     
     //MARK: - Button
-    
     let myButton2 : UIButton = {
         let button = UIButton()
         button.setTitle("Start Time", for: .normal)
@@ -41,7 +40,6 @@ class TwoViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
     
     let myButton : UIButton = {
         let button = UIButton()
@@ -61,8 +59,6 @@ class TwoViewController: UIViewController {
         return button
     }()
     //MARK: - UI
-    
-
     
     let myLabel: UILabel = {
         let label = UILabel()
@@ -98,8 +94,7 @@ class TwoViewController: UIViewController {
         
         return label
     }()
-    
-    
+
     private let stackView: UIStackView = { //вертикальный стак
         let stackView = UIStackView()
         stackView.alignment = .fill
@@ -132,8 +127,6 @@ class TwoViewController: UIViewController {
         return stackViewGo
     }()
 
-
-    // -------------------------------------------
     var dailyPlanLabel: UILabel = {
         var label = UILabel()
         label.text = "DAILY PLAN"
@@ -147,13 +140,9 @@ class TwoViewController: UIViewController {
 
     var viewTest: UIView = {
         var viewTest = UIView()
-
-        //        viewTest.backgroundColor = UIColor(red: 0.902, green: 0.906, blue: 0.937, alpha: 1)
         viewTest.backgroundColor = .white
         return viewTest
     }()
-
-
 
     var testLabel: UILabel = {
         var label = UILabel()
@@ -164,7 +153,6 @@ class TwoViewController: UIViewController {
         return label
     }()
 
-
     var imageClock: UIImageView = {
         var imageClock = UIImageView()
         imageClock.image = UIImage(named: "clock")
@@ -172,7 +160,6 @@ class TwoViewController: UIViewController {
 
         return imageClock
     }()
-
 
     var labelTime: UILabel = {
         var label = UILabel()
@@ -182,29 +169,23 @@ class TwoViewController: UIViewController {
         return label
     }()
 
-
-
     lazy var firstCirckle: UIImageView = {
         var imageFirst = UIImageView()
         imageFirst.image = UIImage(named: "doneImage")
         return imageFirst
     }()
 
-
     lazy var secondCircle: UIImageView = {
         setupCircleFailure()
     }()
-
 
     lazy var thirdCircle: UIImageView = {
         setupCircleFailure()
     }()
 
-
     lazy var fourthCircle: UIImageView = {
         setupCircleFailure()
     }()
-
 
     lazy var fifthCircle: UIImageView = {
         setupCircleFailure()
@@ -222,17 +203,12 @@ class TwoViewController: UIViewController {
         setupCircleFailure()
     }()
 
-
-    // !!!!!!!!!!!!!!!!! для кругов
     private func setupCircleFailure()->UIImageView{
         var imageSecond = UIImageView()
         imageSecond.image = UIImage(named: "failrureImage")
         imageSecond.translatesAutoresizingMaskIntoConstraints = false
         return imageSecond
     }
-
-
-
 
     var dailyPlanCollectionView: UICollectionView = {
 
@@ -248,19 +224,11 @@ class TwoViewController: UIViewController {
 
     }()
 
-    
 
-
-
-
-    // --------------------------------------------
-    
     let shapeView = TimerCircularBarView()
-    
-    
-
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
         setUpViews()
         view.backgroundColor = UIColor(named: "mySert")
@@ -271,29 +239,27 @@ class TwoViewController: UIViewController {
     
     
     func setUpViews() {
-        shapeView.translatesAutoresizingMaskIntoConstraints = false
-        myLabel2.translatesAutoresizingMaskIntoConstraints = false
-        myLabel3.translatesAutoresizingMaskIntoConstraints = false
+        shapeView   .translatesAutoresizingMaskIntoConstraints = false
+        myLabel2    .translatesAutoresizingMaskIntoConstraints = false
+        myLabel3    .translatesAutoresizingMaskIntoConstraints = false
         //
-        dailyPlanLabel.translatesAutoresizingMaskIntoConstraints = false
-        viewTest.translatesAutoresizingMaskIntoConstraints = false
-        testLabel.translatesAutoresizingMaskIntoConstraints = false
-        imageClock.translatesAutoresizingMaskIntoConstraints = false
-        labelTime.translatesAutoresizingMaskIntoConstraints = false
-        firstCirckle.translatesAutoresizingMaskIntoConstraints = false
-        dailyPlanCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        dailyPlanLabel          .translatesAutoresizingMaskIntoConstraints = false
+        viewTest                .translatesAutoresizingMaskIntoConstraints = false
+        testLabel               .translatesAutoresizingMaskIntoConstraints = false
+        imageClock              .translatesAutoresizingMaskIntoConstraints = false
+        labelTime               .translatesAutoresizingMaskIntoConstraints = false
+        firstCirckle            .translatesAutoresizingMaskIntoConstraints = false
+        dailyPlanCollectionView .translatesAutoresizingMaskIntoConstraints = false
 
 
 
 
-        //
 
         view.addSubview(myScroll)
 
         myScroll.addSubview(shapeView)
         myScroll.addSubview(myLabel)
         myScroll.addSubview(stackView)
-        //
         myScroll.addSubview(dailyPlanLabel)
         myScroll.addSubview(viewTest)
         myScroll.addSubview(dailyPlanCollectionView)
@@ -310,11 +276,8 @@ class TwoViewController: UIViewController {
         viewTest.addSubview(seventhCircle)
         viewTest.addSubview(eighthCircle)
 
-
-
-        //
-        stackView.addArrangedSubview(stackViewG)
-        stackView.addArrangedSubview(stackViewGo)
+        stackView .addArrangedSubview(stackViewG)
+        stackView .addArrangedSubview(stackViewGo)
         stackViewG.addArrangedSubview(myLabel2)
         stackViewG.addArrangedSubview(myLabel3)
         
@@ -323,26 +286,26 @@ class TwoViewController: UIViewController {
         
         
         let contentS = myScroll.contentLayoutGuide
-        let constraint = [myScroll.topAnchor.constraint(equalTo: view.topAnchor),
-                          myScroll.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
-                          myScroll.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
-                          myScroll.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -20),
+
+        let constraint = [myScroll.topAnchor.constraint         (equalTo: view.topAnchor),
+                          myScroll.leadingAnchor.constraint     (equalTo: view.leadingAnchor,   constant: 20),
+                          myScroll.trailingAnchor.constraint    (equalTo: view.trailingAnchor,  constant: -20),
+                          myScroll.bottomAnchor.constraint      (equalTo: view.bottomAnchor,    constant: -20),
                           
-                          myLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 65),
-                          myLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                          myLabel.bottomAnchor.constraint(equalTo: shapeView.topAnchor, constant: -35),
+                          myLabel.topAnchor.constraint          (equalTo: view.topAnchor,       constant: 65),
+                          myLabel.centerXAnchor.constraint      (equalTo: view.centerXAnchor),
+                          myLabel.bottomAnchor.constraint       (equalTo: shapeView.topAnchor, constant: -35),
                           
-                          shapeView.heightAnchor.constraint(equalTo: shapeView.widthAnchor),
-                          shapeView.topAnchor.constraint(equalTo: myLabel.bottomAnchor, constant: 10),
-                          shapeView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -35),
-                          shapeView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                          shapeView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                          shapeView.heightAnchor.constraint     (equalTo: shapeView.widthAnchor),
+                          shapeView.topAnchor.constraint        (equalTo: myLabel.bottomAnchor, constant: 10),
+                          shapeView.bottomAnchor.constraint     (equalTo: stackView.topAnchor,  constant: -35),
+                          shapeView.centerXAnchor.constraint    (equalTo: view.centerXAnchor),
+                          shapeView.widthAnchor.constraint      (equalTo: view.widthAnchor, multiplier: 0.6),
                           
-                          stackView.topAnchor.constraint(equalTo: shapeView.bottomAnchor, constant: 35),
-                          // stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                          stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-                          stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-                          stackView.bottomAnchor.constraint(equalTo: myScroll.bottomAnchor, constant: -150),
+                          stackView.topAnchor.constraint        (equalTo: shapeView.bottomAnchor,   constant: 35),
+                          stackView.leadingAnchor.constraint    (equalTo: view.leadingAnchor,       constant: 25),
+                          stackView.trailingAnchor.constraint   (equalTo: view.trailingAnchor,      constant: -25),
+                          stackView.bottomAnchor.constraint     (equalTo: myScroll.bottomAnchor,     constant: -150),
                           
                           
                           stackViewGo.heightAnchor.constraint(equalToConstant: 52),
@@ -350,81 +313,75 @@ class TwoViewController: UIViewController {
                           // ---------------------------------------------------
 
 
-                          dailyPlanLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
-                          dailyPlanLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                          dailyPlanLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20),
+                          dailyPlanLabel.topAnchor.constraint       (equalTo: stackView.bottomAnchor,   constant: 16),
+                          dailyPlanLabel.leadingAnchor.constraint   (equalTo: view.leadingAnchor,       constant: 20),
+                          dailyPlanLabel.trailingAnchor.constraint  (equalTo: view.trailingAnchor,      constant: 20),
 
 
-                          viewTest.topAnchor.constraint(equalTo: dailyPlanLabel.bottomAnchor, constant: 8),
-                          viewTest.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
-                          viewTest.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 18),
-                          viewTest.heightAnchor.constraint(equalToConstant: 96),
-                          viewTest.widthAnchor.constraint(equalToConstant: 343),
+                          viewTest.topAnchor.constraint         (equalTo: dailyPlanLabel.bottomAnchor,   constant: 8),
+                          viewTest.leadingAnchor.constraint     (equalTo: view.leadingAnchor,            constant: 18),
+                          viewTest.trailingAnchor.constraint    (equalTo: view.trailingAnchor,           constant: 18),
+                          viewTest.heightAnchor.constraint      (equalToConstant: 96),
+                          viewTest.widthAnchor.constraint       (equalToConstant: 343),
 
-                          testLabel.leadingAnchor.constraint  (equalTo: viewTest.leadingAnchor    ,   constant: 16),
-                          testLabel.topAnchor.constraint      (equalTo: viewTest.topAnchor        ,   constant: 18.5),
-                          testLabel.trailingAnchor.constraint (equalTo: imageClock.leadingAnchor   ,   constant: -20), // тут херню редакнуть
-                          testLabel.bottomAnchor.constraint   (equalTo: viewTest.bottomAnchor     ,   constant: -62.5),
+                          testLabel.leadingAnchor.constraint  (equalTo: viewTest.leadingAnchor,     constant: 16),
+                          testLabel.topAnchor.constraint      (equalTo: viewTest.topAnchor,         constant: 18.5),
+                          testLabel.trailingAnchor.constraint (equalTo: imageClock.leadingAnchor,   constant: -20), // тут херню редакнуть
+                          testLabel.bottomAnchor.constraint   (equalTo: viewTest.bottomAnchor,      constant: -62.5),
 
-                          //                          imageClock.leadingAnchor.constraint  (equalTo: testLabel.trailingAnchor    ,   constant: 16),
-                          imageClock.topAnchor.constraint      (equalTo: viewTest.topAnchor        ,   constant: 13),
-                          imageClock.trailingAnchor.constraint (equalTo: viewTest.trailingAnchor   ,   constant: -100),
+
+                          imageClock.topAnchor.constraint      (equalTo: viewTest.topAnchor,        constant: 13),
+                          imageClock.trailingAnchor.constraint (equalTo: viewTest.trailingAnchor,   constant: -100),
                           imageClock.widthAnchor.constraint    (equalToConstant: 30),
                           imageClock.heightAnchor.constraint   (equalToConstant: 30),
 
 
-                          labelTime.leadingAnchor.constraint(equalTo: imageClock.trailingAnchor, constant: 8), // good
-                          labelTime.topAnchor.constraint(equalTo: viewTest.topAnchor, constant: 18.50),
-                          labelTime.trailingAnchor.constraint(equalTo: viewTest.trailingAnchor, constant: 16),
+                          labelTime.leadingAnchor.constraint    (equalTo: imageClock.trailingAnchor , constant: 8), // good
+                          labelTime.topAnchor.constraint        (equalTo: viewTest.topAnchor,         constant: 18.50),
+                          labelTime.trailingAnchor.constraint   (equalTo: viewTest.trailingAnchor,    constant: 16),
 
 
-                          firstCirckle.leadingAnchor.constraint(equalTo: viewTest.leadingAnchor, constant: 16),
-                          firstCirckle.bottomAnchor.constraint(equalTo: viewTest.bottomAnchor, constant: -10.59),
-                          firstCirckle.widthAnchor.constraint    (equalToConstant: 33),
-                          firstCirckle.heightAnchor.constraint   (equalToConstant: 33),
+                          firstCirckle.leadingAnchor.constraint (equalTo: viewTest.leadingAnchor,   constant: 16),
+                          firstCirckle.bottomAnchor.constraint  (equalTo: viewTest.bottomAnchor,    constant: -10.59),
+                          firstCirckle.widthAnchor.constraint   (equalToConstant: 33),
+                          firstCirckle.heightAnchor.constraint  (equalToConstant: 33),
 
 
-                          secondCircle.leadingAnchor.constraint(equalTo: firstCirckle.trailingAnchor, constant: 10),
-                          secondCircle.bottomAnchor.constraint(equalTo: viewTest.bottomAnchor, constant: -10.59),
-                          secondCircle.widthAnchor.constraint    (equalToConstant: 33),
-                          secondCircle.heightAnchor.constraint   (equalToConstant: 33),
+                          secondCircle.leadingAnchor.constraint (equalTo: firstCirckle.trailingAnchor,  constant: 10),
+                          secondCircle.bottomAnchor.constraint  (equalTo: viewTest.bottomAnchor,        constant: -10.59),
+                          secondCircle.widthAnchor.constraint   (equalToConstant: 33),
+                          secondCircle.heightAnchor.constraint  (equalToConstant: 33),
 
 
-                          thirdCircle.leadingAnchor.constraint(equalTo: secondCircle.trailingAnchor, constant: 10),
-                          thirdCircle.bottomAnchor.constraint(equalTo: viewTest.bottomAnchor, constant: -10.59),
+                          thirdCircle.leadingAnchor.constraint  (equalTo: secondCircle.trailingAnchor,   constant: 10),
+                          thirdCircle.bottomAnchor.constraint   (equalTo: viewTest.bottomAnchor,         constant: -10.59),
                           thirdCircle.widthAnchor.constraint    (equalToConstant: 33),
                           thirdCircle.heightAnchor.constraint   (equalToConstant: 33),
 
-                          fifthCircle.leadingAnchor.constraint(equalTo: thirdCircle.trailingAnchor, constant: 10),
-                          fifthCircle.bottomAnchor.constraint(equalTo: viewTest.bottomAnchor, constant: -10.59),
+                          fifthCircle.leadingAnchor.constraint  (equalTo: thirdCircle.trailingAnchor,   constant: 10),
+                          fifthCircle.bottomAnchor.constraint   (equalTo: viewTest.bottomAnchor,        constant: -10.59),
                           fifthCircle.widthAnchor.constraint    (equalToConstant: 33),
                           fifthCircle.heightAnchor.constraint   (equalToConstant: 33),
 
-                          sixthCircle.leadingAnchor.constraint(equalTo: fifthCircle.trailingAnchor, constant: 10),
-                          sixthCircle.bottomAnchor.constraint(equalTo: viewTest.bottomAnchor, constant: -10.59),
+                          sixthCircle.leadingAnchor.constraint  (equalTo: fifthCircle.trailingAnchor,   constant: 10),
+                          sixthCircle.bottomAnchor.constraint   (equalTo: viewTest.bottomAnchor,        constant: -10.59),
                           sixthCircle.widthAnchor.constraint    (equalToConstant: 33),
                           sixthCircle.heightAnchor.constraint   (equalToConstant: 33),
 
-                          seventhCircle.leadingAnchor.constraint(equalTo: sixthCircle.trailingAnchor, constant: 10),
-                          seventhCircle.bottomAnchor.constraint(equalTo: viewTest.bottomAnchor, constant: -10.59),
-                          seventhCircle.widthAnchor.constraint    (equalToConstant: 33),
-                          seventhCircle.heightAnchor.constraint   (equalToConstant: 33),
+                          seventhCircle.leadingAnchor.constraint    (equalTo: sixthCircle.trailingAnchor,   constant: 10),
+                          seventhCircle.bottomAnchor.constraint     (equalTo: viewTest.bottomAnchor,        constant: -10.59),
+                          seventhCircle.widthAnchor.constraint      (equalToConstant: 33),
+                          seventhCircle.heightAnchor.constraint     (equalToConstant: 33),
 
-                          eighthCircle.leadingAnchor.constraint(equalTo: seventhCircle.trailingAnchor, constant: 10),
-                          eighthCircle.bottomAnchor.constraint(equalTo: viewTest.bottomAnchor, constant: -10.59),
-                          eighthCircle.widthAnchor.constraint    (equalToConstant: 33),
-                          eighthCircle.heightAnchor.constraint   (equalToConstant: 33),
+                          eighthCircle.leadingAnchor.constraint     (equalTo: seventhCircle.trailingAnchor,     constant: 10),
+                          eighthCircle.bottomAnchor.constraint      (equalTo: viewTest.bottomAnchor,            constant: -10.59),
+                          eighthCircle.widthAnchor.constraint       (equalToConstant: 33),
+                          eighthCircle.heightAnchor.constraint      (equalToConstant: 33),
 
-                          dailyPlanCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                          //                          dailyPlanCollectionView.topAnchor.constraint(equalTo: view.topAnchor,constant: 600 ),
-                          dailyPlanCollectionView.topAnchor.constraint(equalTo: viewTest.bottomAnchor,constant: 50),
-                          dailyPlanCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                          dailyPlanCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-
-
-
-                          // ---------------------------------------------------
-
+                          dailyPlanCollectionView.leadingAnchor.constraint  (equalTo: view.leadingAnchor),
+                          dailyPlanCollectionView.topAnchor.constraint      (equalTo: viewTest.bottomAnchor,constant: 50),
+                          dailyPlanCollectionView.trailingAnchor.constraint (equalTo: view.trailingAnchor),
+                          dailyPlanCollectionView.bottomAnchor.constraint   (equalTo: view.bottomAnchor)
                           
         ]
         NSLayoutConstraint.activate(constraint)
@@ -438,12 +395,10 @@ class TwoViewController: UIViewController {
 
 extension TwoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath)-> CGSize{
-        //        return CGSize(width: view.frame.width - 33,  height: view.frame.height / 17 )
         CGSize(width: 342, height: 96)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        return MaterialsViewController.singleton.mainMaterialsName.count
         return dataArray.count
     }
 
@@ -458,23 +413,18 @@ extension TwoViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.valueLabel.text = dataArray[indexPath.row].values
         cell.penImage.image = dataArray[indexPath.row].pen
 
-
         switch indexPath.row {
         case 0 :
             cell.titileLabel.textColor =  UIColor(red: 0.306, green: 0.292, blue: 1, alpha: 1)
-
         case 1:
             cell.titileLabel.textColor = UIColor(red: 1, green: 0.632, blue: 0.292, alpha: 1)
-
         case 2:
             cell.titileLabel.textColor =  UIColor(red: 0.292, green: 0.448, blue: 1, alpha: 1)
         case 3:
             cell.titileLabel.textColor = UIColor(red: 0.059, green: 0.742, blue: 0.086, alpha: 1)
         default:
             break
-
         }
-
         return cell
     }
 
@@ -483,7 +433,6 @@ extension TwoViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        cellTouch()
         print("hello")
     }
 }
