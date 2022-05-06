@@ -14,13 +14,13 @@ class TwoViewController: UIViewController {
 
 
     var dataArray:[ModelData] = [
-                                 ModelData(icon: UIImage(named: "Water drunk")!, title: "Water drunk", values: "0/2500 ml", pen: UIImage(named: "pen")!),
-                                 ModelData(icon: UIImage(named: "Steps")!, title: "Steps", values: "4000/7000 steps", pen: UIImage(named: "pen")!),
-                                 ModelData(icon: UIImage(named: "Fasting days")!, title: "Fasting days", values: "8 days", pen: UIImage(named: "pen")!),
-                                 ModelData(icon: UIImage(named: "Weight")!, title: "Weight", values: "84 kg", pen: UIImage(named: "pen")!)
+        ModelData(icon: UIImage(named: "Water drunk")!, title: "Water drunk", values: "0/2500 ml", pen: UIImage(named: "pen")!),
+        ModelData(icon: UIImage(named: "Steps")!, title: "Steps", values: "4000/7000 steps", pen: UIImage(named: "pen")!),
+        ModelData(icon: UIImage(named: "Fasting days")!, title: "Fasting days", values: "8 days", pen: UIImage(named: "pen")!),
+        ModelData(icon: UIImage(named: "Weight")!, title: "Weight", values: "84 kg", pen: UIImage(named: "pen")!)
 
     ]
-   
+
     
     //MARK: - Scroll
     let myScroll : UIScrollView = {
@@ -60,7 +60,7 @@ class TwoViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-   //MARK: - UI
+    //MARK: - UI
     
 
     
@@ -112,11 +112,11 @@ class TwoViewController: UIViewController {
     
     private let stackViewG: UIStackView = { // горизон стак лейблы
         let stackViewG = UIStackView()
-//        stackViewG.alignment = .fill
+        //        stackViewG.alignment = .fill
         stackViewG.axis = .horizontal
         stackViewG.spacing = 25
         stackViewG.backgroundColor = .clear
-       
+
         stackViewG.translatesAutoresizingMaskIntoConstraints = false
         return stackViewG
     }()
@@ -133,8 +133,8 @@ class TwoViewController: UIViewController {
     }()
 
 
-// -------------------------------------------
-     var dailyPlanLabel: UILabel = {
+    // -------------------------------------------
+    var dailyPlanLabel: UILabel = {
         var label = UILabel()
         label.text = "DAILY PLAN"
         label.textAlignment = .left
@@ -145,17 +145,17 @@ class TwoViewController: UIViewController {
     }()
 
 
-     var viewTest: UIView = {
+    var viewTest: UIView = {
         var viewTest = UIView()
 
-//        viewTest.backgroundColor = UIColor(red: 0.902, green: 0.906, blue: 0.937, alpha: 1)
-         viewTest.backgroundColor = .white
+        //        viewTest.backgroundColor = UIColor(red: 0.902, green: 0.906, blue: 0.937, alpha: 1)
+        viewTest.backgroundColor = .white
         return viewTest
     }()
 
 
 
-     var testLabel: UILabel = {
+    var testLabel: UILabel = {
         var label = UILabel()
         label.text = "Blood sugar levels rise"
         label.textColor =  UIColor(red: 0.471, green: 0.486, blue: 0.545, alpha: 1)
@@ -165,7 +165,7 @@ class TwoViewController: UIViewController {
     }()
 
 
-     var imageClock: UIImageView = {
+    var imageClock: UIImageView = {
         var imageClock = UIImageView()
         imageClock.image = UIImage(named: "clock")
         // imageClock.contentMode = .scaleToFill
@@ -174,7 +174,7 @@ class TwoViewController: UIViewController {
     }()
 
 
-     var labelTime: UILabel = {
+    var labelTime: UILabel = {
         var label = UILabel()
         label.text = "0-2/h"
         label.textColor = UIColor(red: 0.471, green: 0.486, blue: 0.545, alpha: 1)
@@ -234,7 +234,7 @@ class TwoViewController: UIViewController {
 
 
 
-     var dailyPlanCollectionView: UICollectionView = {
+    var dailyPlanCollectionView: UICollectionView = {
 
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -253,12 +253,12 @@ class TwoViewController: UIViewController {
 
 
 
-// --------------------------------------------
+    // --------------------------------------------
     
     let shapeView = TimerCircularBarView()
     
     
- 
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -298,7 +298,7 @@ class TwoViewController: UIViewController {
         myScroll.addSubview(viewTest)
         myScroll.addSubview(dailyPlanCollectionView)
 
-            // мето для view(аля первая ячейка)
+        // мето для view(аля первая ячейка)
         viewTest.addSubview(testLabel)
         viewTest.addSubview(imageClock)
         viewTest.addSubview(labelTime)
@@ -339,7 +339,7 @@ class TwoViewController: UIViewController {
                           shapeView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
                           
                           stackView.topAnchor.constraint(equalTo: shapeView.bottomAnchor, constant: 35),
-                         // stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                          // stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                           stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
                           stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
                           stackView.bottomAnchor.constraint(equalTo: myScroll.bottomAnchor, constant: -150),
@@ -366,7 +366,7 @@ class TwoViewController: UIViewController {
                           testLabel.trailingAnchor.constraint (equalTo: imageClock.leadingAnchor   ,   constant: -20), // тут херню редакнуть
                           testLabel.bottomAnchor.constraint   (equalTo: viewTest.bottomAnchor     ,   constant: -62.5),
 
-//                          imageClock.leadingAnchor.constraint  (equalTo: testLabel.trailingAnchor    ,   constant: 16),
+                          //                          imageClock.leadingAnchor.constraint  (equalTo: testLabel.trailingAnchor    ,   constant: 16),
                           imageClock.topAnchor.constraint      (equalTo: viewTest.topAnchor        ,   constant: 13),
                           imageClock.trailingAnchor.constraint (equalTo: viewTest.trailingAnchor   ,   constant: -100),
                           imageClock.widthAnchor.constraint    (equalToConstant: 30),
@@ -416,7 +416,7 @@ class TwoViewController: UIViewController {
                           eighthCircle.heightAnchor.constraint   (equalToConstant: 33),
 
                           dailyPlanCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//                          dailyPlanCollectionView.topAnchor.constraint(equalTo: view.topAnchor,constant: 600 ),
+                          //                          dailyPlanCollectionView.topAnchor.constraint(equalTo: view.topAnchor,constant: 600 ),
                           dailyPlanCollectionView.topAnchor.constraint(equalTo: viewTest.bottomAnchor,constant: 50),
                           dailyPlanCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                           dailyPlanCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -428,7 +428,7 @@ class TwoViewController: UIViewController {
                           
         ]
         NSLayoutConstraint.activate(constraint)
-       
+
         
         
     }
@@ -438,12 +438,12 @@ class TwoViewController: UIViewController {
 
 extension TwoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath)-> CGSize{
-//        return CGSize(width: view.frame.width - 33,  height: view.frame.height / 17 )
+        //        return CGSize(width: view.frame.width - 33,  height: view.frame.height / 17 )
         CGSize(width: 342, height: 96)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return MaterialsViewController.singleton.mainMaterialsName.count
+        //        return MaterialsViewController.singleton.mainMaterialsName.count
         return dataArray.count
     }
 
@@ -483,7 +483,7 @@ extension TwoViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        cellTouch()
+        //        cellTouch()
         print("hello")
     }
 }

@@ -55,7 +55,7 @@ class CellCollectionView: UICollectionViewCell {
         NSLayoutConstraint.activate([
             iconImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             iconImage.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-//            iconImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 330)
+            //            iconImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 330)
             iconImage.widthAnchor.constraint(equalToConstant: 24),
             iconImage.heightAnchor.constraint(equalToConstant: 24)
         ])
@@ -77,7 +77,7 @@ class CellCollectionView: UICollectionViewCell {
 
         contentView.addSubview(penImage)
         NSLayoutConstraint.activate([
-//            penImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            //            penImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             penImage.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             penImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             penImage.widthAnchor.constraint(equalToConstant: 24),
