@@ -8,7 +8,6 @@
 import UIKit
 
 class ThreeViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "mySert")

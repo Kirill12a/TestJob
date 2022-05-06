@@ -13,6 +13,15 @@ struct ModelData {
 class TwoViewController: UIViewController {
 
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpViews()
+        view.backgroundColor = UIColor(named: "mySert")
+        dailyPlanCollectionView.dataSource = self
+        dailyPlanCollectionView.delegate = self
+    }
+
+
     var dataArray:[ModelData] = [
 
         ModelData(icon: UIImage(named: "Water drunk")!  , title: "Water drunk"  , values: "0/2500 ml",       pen: UIImage(named: "pen")!),
@@ -227,15 +236,7 @@ class TwoViewController: UIViewController {
 
     let shapeView = TimerCircularBarView()
 
-    override func viewDidLoad() {
 
-        super.viewDidLoad()
-        setUpViews()
-        view.backgroundColor = UIColor(named: "mySert")
-        dailyPlanCollectionView.dataSource = self
-        dailyPlanCollectionView.delegate = self
-        
-    }
     
     
     func setUpViews() {
@@ -306,17 +307,12 @@ class TwoViewController: UIViewController {
                           stackView.leadingAnchor.constraint    (equalTo: view.leadingAnchor,       constant: 25),
                           stackView.trailingAnchor.constraint   (equalTo: view.trailingAnchor,      constant: -25),
                           stackView.bottomAnchor.constraint     (equalTo: myScroll.bottomAnchor,     constant: -150),
-                          
-                          
+
                           stackViewGo.heightAnchor.constraint(equalToConstant: 52),
-
-                          // ---------------------------------------------------
-
 
                           dailyPlanLabel.topAnchor.constraint       (equalTo: stackView.bottomAnchor,   constant: 16),
                           dailyPlanLabel.leadingAnchor.constraint   (equalTo: view.leadingAnchor,       constant: 20),
                           dailyPlanLabel.trailingAnchor.constraint  (equalTo: view.trailingAnchor,      constant: 20),
-
 
                           viewTest.topAnchor.constraint         (equalTo: dailyPlanLabel.bottomAnchor,   constant: 8),
                           viewTest.leadingAnchor.constraint     (equalTo: view.leadingAnchor,            constant: 18),
@@ -329,29 +325,24 @@ class TwoViewController: UIViewController {
                           testLabel.trailingAnchor.constraint (equalTo: imageClock.leadingAnchor,   constant: -20), // тут херню редакнуть
                           testLabel.bottomAnchor.constraint   (equalTo: viewTest.bottomAnchor,      constant: -62.5),
 
-
                           imageClock.topAnchor.constraint      (equalTo: viewTest.topAnchor,        constant: 13),
                           imageClock.trailingAnchor.constraint (equalTo: viewTest.trailingAnchor,   constant: -100),
                           imageClock.widthAnchor.constraint    (equalToConstant: 30),
                           imageClock.heightAnchor.constraint   (equalToConstant: 30),
 
-
                           labelTime.leadingAnchor.constraint    (equalTo: imageClock.trailingAnchor , constant: 8), // good
                           labelTime.topAnchor.constraint        (equalTo: viewTest.topAnchor,         constant: 18.50),
                           labelTime.trailingAnchor.constraint   (equalTo: viewTest.trailingAnchor,    constant: 16),
-
 
                           firstCirckle.leadingAnchor.constraint (equalTo: viewTest.leadingAnchor,   constant: 16),
                           firstCirckle.bottomAnchor.constraint  (equalTo: viewTest.bottomAnchor,    constant: -10.59),
                           firstCirckle.widthAnchor.constraint   (equalToConstant: 33),
                           firstCirckle.heightAnchor.constraint  (equalToConstant: 33),
 
-
                           secondCircle.leadingAnchor.constraint (equalTo: firstCirckle.trailingAnchor,  constant: 10),
                           secondCircle.bottomAnchor.constraint  (equalTo: viewTest.bottomAnchor,        constant: -10.59),
                           secondCircle.widthAnchor.constraint   (equalToConstant: 33),
                           secondCircle.heightAnchor.constraint  (equalToConstant: 33),
-
 
                           thirdCircle.leadingAnchor.constraint  (equalTo: secondCircle.trailingAnchor,   constant: 10),
                           thirdCircle.bottomAnchor.constraint   (equalTo: viewTest.bottomAnchor,         constant: -10.59),

@@ -73,16 +73,16 @@ class TimerCircularBarView: UIView {
         let arcCenter = CGPoint(x: bounds.midX, y: bounds.midY)
 
         shapeLayer.path = UIBezierPath      (arcCenter: arcCenter,
-                                            radius: diameter / 2,
-                                            startAngle: 0,
-                                            endAngle: .pi * 2,
-                                            clockwise: true).cgPath
+                                             radius: diameter / 2,
+                                             startAngle: 0,
+                                             endAngle: .pi * 2,
+                                             clockwise: true).cgPath
 
         progressLayer.path = UIBezierPath    (arcCenter: arcCenter,
-                                             radius: diameter / 2,
-                                             startAngle: -.pi / 2,
-                                             endAngle: .pi * 1.5,
-                                             clockwise: true).cgPath
+                                              radius: diameter / 2,
+                                              startAngle: -.pi / 2,
+                                              endAngle: .pi * 1.5,
+                                              clockwise: true).cgPath
         
         inProgressLayer.path = UIBezierPath  (arcCenter: arcCenter,
                                               radius: diameter / 2.5,
