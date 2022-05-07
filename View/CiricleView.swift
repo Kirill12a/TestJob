@@ -57,7 +57,8 @@ class TimerCircularBarView: UIView {
     }
     
     func setupConstrains() {
-        let constraint = [shapeView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+        let constraint = [
+                          shapeView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                           shapeView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
                           timeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                           timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
