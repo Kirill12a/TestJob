@@ -213,7 +213,7 @@ class TwoViewController: UIViewController {
     }()
 
     private func setupCircleFailure()->UIImageView{
-        var imageSecond = UIImageView()
+        let imageSecond = UIImageView()
         imageSecond.image = UIImage(named: "failrureImage")
         imageSecond.translatesAutoresizingMaskIntoConstraints = false
         return imageSecond
@@ -233,11 +233,7 @@ class TwoViewController: UIViewController {
 
     }()
 
-
     let shapeView = TimerCircularBarView()
-
-
-    
     
     func setUpViews() {
         shapeView   .translatesAutoresizingMaskIntoConstraints = false
@@ -376,13 +372,8 @@ class TwoViewController: UIViewController {
                           
         ]
         NSLayoutConstraint.activate(constraint)
-
-        
-        
     }
 }
-
-
 
 extension TwoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath)-> CGSize{
