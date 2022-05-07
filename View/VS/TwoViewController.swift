@@ -1,7 +1,4 @@
-
-
 import UIKit
-
 
 struct ModelData {
     var icon: UIImage
@@ -12,7 +9,6 @@ struct ModelData {
 
 class TwoViewController: UIViewController {
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
@@ -20,7 +16,6 @@ class TwoViewController: UIViewController {
         dailyPlanCollectionView.dataSource = self
         dailyPlanCollectionView.delegate = self
     }
-
 
     var dataArray:[ModelData] = [
 
@@ -30,7 +25,6 @@ class TwoViewController: UIViewController {
         ModelData(icon: UIImage(named: "Weight")!       , title: "Weight"       , values: "84 kg",           pen: UIImage(named: "pen")!)
     ]
 
-    
     //MARK: - Scroll
     let myScroll : UIScrollView = {
         let scroll = UIScrollView()
