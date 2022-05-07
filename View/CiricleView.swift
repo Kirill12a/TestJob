@@ -91,7 +91,6 @@ class TimerCircularBarView: UIView {
                                               endAngle: .pi * 1.5,
                                               clockwise: true).cgPath
 
-
         shapeView.layer.addSublayer(shapeLayer)
         shapeView.layer.insertSublayer(progressLayer, above: shapeLayer)
         shapeView.layer.insertSublayer(inProgressLayer, above: progressLayer)
